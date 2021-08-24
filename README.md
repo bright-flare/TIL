@@ -1,1 +1,9 @@
-# this is TIL README file
+# Today im learning
+
+## learning list
+- Java
+- Spring
+- Spring Boot
+- JPA
+- Javascript
+- .....
