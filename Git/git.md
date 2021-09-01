@@ -13,7 +13,7 @@
 
 ## ⌨️ 명령어
 
-### 🛠 git 설정, 상태, log 확인하기
+### 🛠 git 설정, 확인하기
 
 ```
 # git version 확인 !
@@ -21,7 +21,7 @@ $ git --version
 ```
 
 ```
-# 🌱 git 초기화. 초기화 하면 .git 이라는 폴더가 생기며 version관리 시작가능 !
+# 🌱 git 저장소 초기화. 초기화 하면 [ .git ] 이라는 폴더가 생기며 version관리 시작가능 !
 $ git init
 ```
 
@@ -51,6 +51,11 @@ $ git config --global user.email "git@gmail.com"
 $ git config --global init.defaultBranch main
 ```
 
+```
+# 💎 github-user의 github-repository 저장소 복제하기
+$ git clone https://github.com/github-user/github-repository
+```
+
 ``` 
 # 👀 현재 상태 확인 commit할 파일이 있는지 add할 파일이 있는지
 $ git status
@@ -66,7 +71,13 @@ $ git log
 $ git branch
 ```
 
+
 ```
 # 전체 파일 스테이지에 올리기 dot 대신에 파일명을 쓰면 해당 파일만 올라감
 $ git add .
 ```
+
+```
+# git commit -m
+```
+
