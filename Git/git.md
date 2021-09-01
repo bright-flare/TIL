@@ -13,9 +13,7 @@
 
 ## ⌨️ 명령어
 
-<br>
-
-### git 설정, 상태
+### 🛠 git 설정, 상태, log 확인하기
 
 ```
 # git version 확인 !
@@ -27,8 +25,14 @@ $ git --version
 $ git init
 ```
 
+<br>
+
+> --global 옵션을 빼고 입력하게되면 Repository단위로 설정하는것 입니다.
+
+<br>
+
 ```
-# ⚙️ git 사용자 글로벌 설정 목록 조회 
+# 🌏 git 글로벌 설정 목록 조회 
 $ git config --global --list
 ```
 
@@ -38,27 +42,27 @@ $ git config --global user.name "User name"
 ```
 
 ```
-> 글로벌 이메일 설정
+# 글로벌 이메일 설정
 $ git config --global user.email "git@gmail.com"
 ```
 
 ```
-> 기본 브랜치를 main으로 설정
+# 기본 브랜치를 main으로 설정
 $ git config --global init.defaultBranch main
 ```
 
 ``` 
-> 👀 현재 상태 확인 commit할 파일이 있는지 add할 파일이 있는지
+# 👀 현재 상태 확인 commit할 파일이 있는지 add할 파일이 있는지
 $ git status
 ```
 
 ``` 
-# commit log 확인하기
+# 👀 commit log 확인하기
 $ git log
 ```
 
 ``` 
-# 현재 branch 확인하기
+# 👀 현재 branch 확인하기
 $ git branch
 ```
 
