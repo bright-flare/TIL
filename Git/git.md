@@ -127,7 +127,7 @@ $ git pull origin main
 ```
 # 🌱 branch 생성하기
 # 현재 커밋 상태부터 branch가 생성되며 생성 이후로는 하나의 큰 줄기에서 뻗어나가는 가지처럼 갈라진다.
-# pull request를 통해 merge하면 다시 합칠 수 있음 !
+# 갈라진 가지들, branch들은 각자의 삶을 살다가 pull request를 통해 merge하면 다시 합칠 수 있음 !
 
 $ git branch branchname
 ```
