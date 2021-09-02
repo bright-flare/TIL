@@ -25,12 +25,7 @@ $ git --version
 $ git init
 ```
 
-<br>
-
-> --global 옵션을 빼고 입력하게되면 Repository단위로 설정하는것 입니다.
-
-<br>
-
+> note. --global 옵션을 빼고 입력하게되면 Repository단위로 설정하는것 입니다.
 ```
 # 🌏 git 글로벌 설정 목록 조회 
 $ git config --global --list
@@ -71,13 +66,31 @@ $ git log
 $ git branch
 ```
 
+## 파일 상태 다루기
 
 ```
-# 전체 파일 스테이지에 올리기 dot 대신에 파일명을 쓰면 해당 파일만 올라감
+# 👆 전체 파일 스테이지에 올리기 dot 대신에 파일명을 쓰면 해당 파일만 올라감
 $ git add .
 ```
 
 ```
-# git commit -m
+# 📸 스테이지에 올라간 파일,디렉토리 commit하기. 현재 상태를 저장한다. (현재 시점을 사진 찍는것과 같은 느낌.)
+$ git commit -m "commit message"
+```
+
+```
+# 📸 $ git log 를 통해 commit hash code를 복사하여 해당 시점으로 돌아가기. hash code만 있으면 앞으로, 뒤로 원하는 시점으로 돌아갈 수 있음.
+# --hard option 말고 다른 option들도 있습니다.
+$ git reset --hard 91f61e82b0175d49c4fceda57d8b9133432f124f
+```
+
+```
+# 🚀 commit한 내용들을 원격 저장소 main branch에 push하기
+$ git push origin main
+```
+
+```
+# 🚀 commit한 내용들을 원격 저장소 main branch에 push하기
+$ git remote add origin https://github.com/github-user/github-repository.git
 ```
 
