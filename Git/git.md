@@ -92,6 +92,11 @@ $ git add --all
 ```
 
 ```
+# 👇 전체 파일 unstage. 스테이지에서 내리기. dot 대신에 특정 파일만 내릴수도 있음.
+$ git reset HEAD .
+```
+
+```
 # 📸 stage에 올라간 파일,디렉토리 commit하기. 현재 상태를 저장한다. (현재 시점을 사진 찍는것과 같은 느낌.)
 
 $ git commit -m "commit message"

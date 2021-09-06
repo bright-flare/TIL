@@ -1,3 +1,3 @@
-# Today im learning
+# Today i learned
 
 
