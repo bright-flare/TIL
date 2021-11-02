@@ -27,7 +27,7 @@ server.port=8443
 
 ## SSL 설정후 확인하기.
 - SSL 설정후 Connector를 하나더 생성하여 https, http 모두 사용하자.
-- 확인하기
+- /hello 라는 Url을 Mapping하는 Controller를 만들어 놓고 아래 명령어로 확인하자.
 ```xml
 $ curl -I -k --http2 http://localhost:8080/hello
 $ curl -I -k --http2 https://localhost:8443/hello
