@@ -2,7 +2,7 @@
 
 ## 🧑🏻‍💻 SSL 설정하기
 - HTTP2를 설정하려면 먼저 SSL설정이 되어있어야 한다.
-- Servlet Container로 Tomcat을 사용할 경우 8.5 이후 버전을 사용하는 것을 권장한다. (설정이 매우 어려움) 9 version 부터는 별도의 설정이 필요 없다.
+- Servlet Container로 Tomcat을 사용할 경우 8.5 이후 9 버전이상을 사용하는 것을 권장한다. (설정이 매우 어려움) 9 version 부터는 별도의 설정이 필요 없다.
 
 - SSL 인증서 생성하기
 ```xml
