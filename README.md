@@ -1,3 +1,1 @@
-# Today I Learned
-
-
+# Today I Learned and sseob wiki repo
