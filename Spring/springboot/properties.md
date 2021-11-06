@@ -25,7 +25,7 @@ public class SeobProperties {
 - `@ConfigurationProperties` 어노테이션을 통해 만들 수 있다.
     - 프로퍼티를 설정한다는 `@EnableConfigurationProperties` 어노테이션의 설정과 같이 사용 되어야 하지만, springboot application에서는 생략 가능하다.
     - prefix가 `sseob`인 property값을 읽어와 매핑한다.
-    - properties file에서 설정된 prefix의 설정값을 사용할 때에 IDE의 적극적인 지원을 받아 편리하게 이용 가능하다.
+    - 프로퍼티 매핑 Class에서 설정된 prefix값을 properties 파일에서 사용할 때에 IDE의 적극적인 지원을 받아 편리하게 이용 가능하다.
     - 카멜케이스, 스네이크 케이스, 케밥 케이스 등 다양한 text 문자 형식으로 properties 파일에서 작성해도 적절히 매핑된다.
         > ex) fullName, full-name, full_name, FULLNAME -> 모두 fullName 필드로 매핑된다.
 
