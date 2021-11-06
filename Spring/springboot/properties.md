@@ -35,7 +35,9 @@ public class SeobProperties {
 
 - 프로퍼티 값을 매핑할 때에 @Validated 어노테이션을 통해 validation check도 가능하다 !
 - 프로퍼티 값을 매핑할 때에 Type conversion이 적용된다.
-> ex) `sseob.age = 10` -> 10이라는 숫자는 properties file에서 단순한 text이지만 `int`로 타입이 바뀌어 매핑된다.
-> ex) `sseob.sessionTimeout = 20s` -> properties file에서 s라는 seconds를 상징하는 문자를 붙여주면 Duration 타입으로 매핑된다.
-> ex) `sseob.sessionTimeout = 20` -> 이 경우에는 ssesionTimeout field에 `@DurationUnit(ChronoUnit.SECONDS)` 라고 명시해야된다.
+    > ex) `sseob.age = 10` -> 10이라는 숫자는 properties file에서 단순한 text이지만 `int`로 타입이 바뀌어 매핑된다.
+
+    > ex) `sseob.sessionTimeout = 20s` -> properties file에서 s라는 seconds를 상징하는 문자를 붙여주면 Duration 타입으로 매핑된다.
+
+    > ex) `sseob.sessionTimeout = 20` -> 이 경우에는 ssesionTimeout field에 `@DurationUnit(ChronoUnit.SECONDS)` 라고 명시해야된다.
 
