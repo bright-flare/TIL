@@ -45,7 +45,9 @@ public class SeobProperties {
 ## 👋 Profile과 함께
 
 > 여러가지 프로파일을 만들어 놓고, program argument 또는 application.properties에 설정하여 선택적인 프로퍼티 값을 사용할 수 있다.
+
 > profile이 적용된 application properties가 우선순위가 더 높다.
+
 > 선택적인 Bean설정을 사용할 수 있다.
 
 ```java
