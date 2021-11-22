@@ -116,10 +116,10 @@ public class ProfileRunner implements ApplicationRunner {
 1. profile 활성화 설정에 따라 `HyunProfileConfig` Class의 Bean이 **주입** 되었음을 알 수 있다.
 2. 프로퍼티 적용 우선순위에 따라 sseob.fullName 값이 application-hyun.properties 파일의 값으로 적용된것을 확인할 수 있다. 
 ```console
-============ProfileRunner============
+=============ProfileRunner=============
 hello hyun !
 hyun profile was changed sseob full name
-============ProfileRunner============
+=============ProfileRunner=============
 ```
 
 ### 프로파일 변경하기
