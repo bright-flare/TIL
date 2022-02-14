@@ -8,4 +8,4 @@
 ### JPA
 - JPA는 객체와 Database Table을 매핑하게 되는데, JPA구현체들(대표적으로 Hibernate)이 설정된 매핑정보를 토대로 sql query문을 만들어 준다.
 - 개발자는 sql query문에 의존적인 개발을 하지 않고, 올바른 매핑 방법과 객체 중심의 비즈니스 로직을 작성하게 된다.
-- 동적 query같은 문제는 
+- 동적 query을 사용하는데에 Mybatis보다 불편한 점이 있지만, 객체 중심의 query를 생성할 수 있는 Jpql, QueryDSL로 충분히 보완 가능하다.
