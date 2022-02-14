@@ -1,0 +1,3 @@
+### 🥸 EntityManager
+
+- `EntityManager`
