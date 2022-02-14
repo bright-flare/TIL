@@ -1,6 +1,6 @@
 ### Sql mapper와의 차이점.
 
-### 보통 흔히 사용하는 sql mapper로 Mybatis를 예를 들어보자.
+### 흔히 사용하는 sql mapper Mybatis
 - sql mapper인 Mybatis는 sql을 mapping하기위한 mapper xml파일에 sql query문을 작성하여 객체와 sql을 매핑하게 된다.
 - query문을 작성해 놓고 Mybatis에서 제공하는 동적 query 문법을 사용하면 편리하게 동적 query를 작성할 수 있다.
 - 하지만, sql을 작성하는 주체는 개발자가 되어버리고 객체를 sql을 통해 매핑 하다보면 sql에 의존적인 개발을 하게된다.
