@@ -31,4 +31,5 @@ EntityManager em = entityManagerFactory.createEntityManager(); // 필요할 때�
     </properties>
 </persistence-unit>
 ```
-
+- `EntityManagerFactory`는 application 전체에서 공유한다. Thread Safe하며 생성하는데 큰 비용이 든다.
+- `EntityManager`는 Thread Safe하지 않으며 생성하는데 큰 비용이 들지 않는다.
