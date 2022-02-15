@@ -1,15 +1,15 @@
-## 🥸 EntityManager
+## 🥸 EntityManager와 EntityManagerFactory
 > `EntityManager`는 Entity를 저장, 수정, 삭제, 조회하는 등 Entity와 관련된 모든 일을 처리한다. 이름 그대로 Entity의 매니저다.
 
-###  EntityManagerFactory
+### 👏 EntityManagerFactory 생성
 - Database를 하나만 사용할 경우 일반적으로 EntityManagerFactory는 하나만 생성한다.
 - EntityManagerFactory를 통해 EntityManager를 얻는다.
 ```java
 EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("sseob");
-EntityManager em = entityManagerFactory.createEntityManager(); // entity manager 생성하여 얻음
+EntityManager em = entityManagerFactory.createEntityManager(); // 필요할 때마다 entity manager 생성하여 얻을 수 있다.
 ```
 
-- `Persistence.createEntityManagerFactory("sseob");` 를 실행하게 되면 META-INF/persistence.xml파일의 정보를 바탕으로 EntityManagerFactory를 생성한다. 
+- `Persistence.createEntityManagerFactory("sseob");` 를 실행하게 되면 META-INF/persistence.xml파일의 정보를 바탕으로 EntityManagerFactory를 생성한다.
 ```xml
 // persistence.xml
 <persistence-unit name="sseob">
@@ -31,3 +31,4 @@ EntityManager em = entityManagerFactory.createEntityManager(); // entity manager
     </properties>
 </persistence-unit>
 ```
+
