@@ -46,3 +46,12 @@
     1. Transaction commit이 이루어질 때 1차 캐시의 Entity와 Entity에 해당하는 스냅샷을 비교한다.
     2. Entity와 스냅샷과의 비교 이후에 변경사항이 존재하면 쓰기 지연 sql 저장소에 query문을 저장한다.
     3. flush가 이루어지면 저장해 놓았던 sql query문들을 Database에 실행시킨다. (Persistence context의 변경사항을 Database에 반영한다.)
+
+
+### Flush
+> **영속성 컨텍스트의 변경사항을 Database에 반영한다.**
+
+- 영속성 컨텍스트를 플러시하는 방법
+    1. flush() method 호출
+    2. Transaction commit할 때에 flush 자동 호출
+    3. JPQL query 실행할 때에 flush 자동 호출
