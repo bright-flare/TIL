@@ -5,7 +5,7 @@
 - EntityManager를 통해서 영속성 컨텍스트에 접근할 수 있다.
 
 
-### EntityManager 생명주기 💫
+### Entity 생명주기 💫
 1. 비영속(new/transient)
     - Account Class가 존재한다고 가정했을 때 new Account();를 통해 객체를 생성한 상태. JPA와 전혀 관계가 없는 상태.
 2. 영속(managed)
@@ -20,12 +20,14 @@
 
 ### 영속성 컨텍스트의 이점
 
+> **EntityManager를 통해서 영속성 컨텍스트에 접근할 수 있다.**
+
 1. 1차캐시를 사용한다.
     - 엔티티 조회시 영속성 컨텍스트 내부 1차캐시에서 먼저 해당 객체를 @Id값으로 식별하여 조회한다. (조회 Query가 실행되지 않는다.)
     - 1차캐시에 해당 객체가 존재하지 않는다면 DB에서 해당 객체를 조회하며, 1차캐시에 저장한다. 이후 똑같은 객체를 한번 더 조회하게 되면 1차 캐시를 참조하게 된다.
     - 1차캐시는 Application전체에서 공유하는 캐시가 아니라 Transaction단위로 공유하는 캐시이다.
 
-2. 영속화된 Entity의 동일성을 보장한다.
+2. 영속화된 Entity의 동일성을 보장한다. (identity)
     - 같은 Transaction안에서 1차캐시로 읽어진 객체는 동일한 객체이다.
     ```java
         Account account = entityManager.find(Account.class, 1L);
@@ -33,7 +35,7 @@
         account == account2 // true
     ```
 
-3. 쓰기 지연 sql 저장소
+3. 쓰기 지연 sql 저장소 (transactional write-behind)
     - Entity를 저장, 수정, 삭제를 바로 실행하는게 아니라, Transaction이 commit되는 시점에 SQL query문을 실행시킨다.
     - persist() method로 Entity를 저장(영속화)하면 해당 Entity를 1차 캐시에 저장하고 query문을 쓰기 지연 sql 저장소에 저장 해놓는다.
     ```java
@@ -47,12 +49,16 @@
     2. Entity와 스냅샷과의 비교 이후에 변경사항이 존재하면 쓰기 지연 sql 저장소에 query문을 저장한다.
     3. flush가 이루어지면 저장해 놓았던 sql query문들을 Database에 실행시킨다. (Persistence context의 변경사항을 Database에 반영한다.)
 
+5. 지연 로딩 (Lazy Loading)
+    1. 
 
 ### Flush
+
 > **영속성 컨텍스트의 변경사항을 Database에 반영한다.**
-> **flush를 한다고 해서 1차캐시의 내용이 초기화 되는것은 아니다.**
+
+> **flush를 한다고 해서 영속성 컨텍스트를 비우는 것이 아니다.**
 
 - 영속성 컨텍스트를 플러시하는 방법
     1. flush() method 호출
     2. Transaction commit할 때에 flush 자동 호출
-    3. JPQL query 실행할 때에 flush 자동 호출
+    3. JPQL query 실행할 때에 flush 자동 호출.
