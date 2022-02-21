@@ -21,4 +21,13 @@ public class Member extends BaseEntity {
 
     ...getter
     ...setter
+}
 ```
+- 위와 같은 Member Entity가 있다고 하자.
+
+```java
+Member member = entityManager.find(Member.class, memberId);
+member.getTeam().getName();
+```
+
+
