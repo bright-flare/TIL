@@ -21,4 +21,7 @@
     - 프록시 객체는 `target`을 통해 실제 Entity의 method를 호출하게 되는데 영속성 컨텍스트에 해당 Entity가 비어있게 되면 영속성 컨텍스트에 초기화 요청을 하게된다. 이 때 실제 DB에서 조회를 하여 Entity를 생성하게 되는데 `준영속 (detached)` 상태는 영속성 컨텍스트의 관리를 받지 않는 상태이기 때문에 에외가 발생하게 된다.
     - hibernate일 경우 예외명은 `org.hibernate.LazyInitializationException`이다.
 
-### Proxy 객체 초기화
+### Proxy 확인
+- 프록시 인스턴스의 초기화 여부 확인 -> `PersistenceUnitUtil.isLoaded()`
+- 프록시 클래스 확인 -> `System.out.println(entity.getClass().getName())`
+- 프록시 강제 초기화 -> `org.hibernate.Hibernate.initialize()`
