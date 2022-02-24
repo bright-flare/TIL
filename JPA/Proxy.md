@@ -10,6 +10,15 @@
 - JPA에서 Id값으로 Entity를 조회할 때에는 `EntityManager.find()`를 사용한다. 이 method는 영속성 컨텍스트에 Entity가 없으면 DB를 조회한다. 이렇게 Entity를 직접 조회하게 되면 Entity를 사용하든 사용하지 않든 (영속성 컨텍스트에 해당 Entity가 없다는 전제하에) DB를 조회하게 된다.
 - 그런데 Entity를 실제 사용하는 시점까지 DB조회를 미루고 싶으면 이 때 `EntityManager.getReference()` method를 사용할 수 있다. 이 method는 DB를 조회하지도 않고 실제 Entity 객체를 생성하지도 않는다. 대신에 DB접근을 위임한 `Proxy` 객체를 반환하게 된다.
 
+### Proxy 겍체 초기화
+- `Proxy` 객체는 `account.getUsername()` 처럼 실제 사용될 때 DB를 조회해서 Entity객체를 생성하는데 이 과정을 Proxy객체 초기화라고 한다.
+    - **초기화 과정**
+        1. `account.getUsername()` 호출 (실제 Entity를 사용하려고 하는 행위)
+        2. Proxy객체는 실제 Entity가 생성 되어있지 않으면 영속성 컨텍스트에 실제 Entity 생성을 요청한다. (실질적인 초기화)
+        3. 영속성 컨텍스트는 DB를 조회하여 실제 Entity 객체를 생성.
+        4. Proxy 객체는 생성된 실제 Entity 객체의 참조값을 `target member 변수`에 보관
+        5. Proxy 객체는 `target.getUsername()`을 통해 실제 Entity 객체의 `getUsername()`을 호출해서 결과를 반환. (target은 실제 Entity Class의 참조이니까 실제 Entity를 조회하는거나 마찬가지)
+
 ### Proxy 특징
 - `Proxy` 객체는 처음 사용할 때 한 번만 초기화 한다.
 - 실제 Class를 상속 받아서 만들어진다.
