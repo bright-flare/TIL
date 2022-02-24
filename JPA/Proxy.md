@@ -2,32 +2,9 @@
 
 > JPA 핵심적인 기능중 하나인 지연로딩을 지원하기위해 존재하는 필수적인 개념인 Proxy에 대해서 알아본다.
 
-```java
-@Entity
-public class Member extends BaseEntity {
-
-	@Id
-	@GeneratedValue
-	@Column(name = "member_id")
-	private Long id;
-	
-	private int age;
-
-	private String name;
-
-	@ManyToOne(fetch = FetchType.LAZY) // 지연 로딩. proxy객체를 조회한다.
-	@JoinColumn(name = "team_id")
-	private Team team;
-
-    ...getter
-    ...setter
-}
-```
-- 위와 같은 Member Entity가 있다고 하자.
-
-```java
-Member member = entityManager.find(Member.class, memberId);
-member.getTeam().getName();
-```
-
-
+### Proxy 특징
+1. 실제 Class를 상속 받아서 만들어진다.
+2. 실제 Class와 겉 모양이 같다.
+3. 이론상 진짜 객체인지 프록시 객체인지 구분하지 않고 사용할 수 있다.
+4. 프록시 객체는 실제 객체의 참조(target)를 보관한다.
+5. 프록시 객체를 호출하면 프록시 객체는 `실제 객체의 method`를 호출한다.
