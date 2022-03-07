@@ -38,8 +38,7 @@ member.setTeam(team);
 entityManager.persist(member);
 
 // Fetch전략이 즉시로딩일 경우 join하여 즉시 로딩한다.
-List<Member> resultList = entityManager.createQuery("select m from Member m ", Member.class).getResultList();
-resultList.forEach(System.out::println);
+Member m = entityManager.find(Member.class, member.getId());
 ```
 
 1. 위와같은 코드가 있다고 해보자. Member Entity와 Team Entity는 `@ManyToOne`으로 연관관계가 설정되어 있다.
