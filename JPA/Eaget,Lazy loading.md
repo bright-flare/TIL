@@ -112,8 +112,8 @@ Hibernate:
 - Member가 여러명이면 해당하는 모든 Member에 대한 Team의 갯수만큼 N개의 query가 추가로 발생한다. Member에 대한 Sql query문 1개를 기대하고 실행 하였지만 모든 Member에 대한 N개의 Team을 조회하는 것을 `N + 1`문제라고 한다.
 
 ### N + 1 문제 해결
-- JPQL fetch join을 통해 Team에 대한 결과값을 같이(join하여) 가져오도록 JPQL을 작성해야 한다.
-- FetchType을 즉시 로딩이 아닌 지연 로딩을 사용한다. Team을 즉시 로딩하기 위한 동작을 회피하며, 실제 Team객체를 사용할 때에 Team을 조회한다.
+- `JPQL fetch join`을 통해 Team에 대한 결과값을 같이(join하여) 가져오도록 JPQL을 작성해야 한다.
+- `FetchType`을 즉시 로딩이 아닌 지연 로딩을 사용한다. Team을 즉시 로딩하기 위한 동작을 회피하며, 실제 Team객체를 사용할 때에 Team을 조회한다.
 - `persistence.xml` 설정 `batch_fetch_size`를 통해 `N + 1` query를 발생 시키는게 아니라 N개의 Team을 `where in`절 안에 넣어 `1 + 1` query를 발생 시킬 수 있다.
 ```xml
 <property name="hibernate.default_batch_fetch_size" value="100"/>
@@ -139,6 +139,40 @@ Hibernate:
 
 > **Team Entity와의 연관관계 설정을 그대로 두고 `FetchType`을 `Lazy`로 설정하면**
 
+```java
+@Entity
+public class Member{
+
+	@Id
+	@GeneratedValue
+	@Column(name = "member_id")
+	private Long id;
+	
+	private int age;
+
+	private String name;
+
+	@ManyToOne(fetch = FetchType.LAZY) // 지연 로딩
+	@JoinColumn(name = "team_id")
+	private Team team;
+}
+```
+
+### 실행해보기
+```java
+Team team = new Team("team !");
+entityManager.persist(team);
+
+Member member = new Member("sseob");
+member.setCreatedBy("심현섭");
+member.setCreatedDate(LocalDateTime.now());
+member.setTeam(team);
+entityManager.persist(member);
+
+// Fetch전략이 즉시로딩일 경우 join하여 즉시 로딩한다.
+Member m = entityManager.find(Member.class, member.getId());
+```
+
 ```sql
     select
         member0_.member_id as member_i1_9_0_,
@@ -154,7 +188,8 @@ Hibernate:
 ```
 
 - 즉시 로딩과는 달리 Team을 join한 query가 발생하지 않는다. 
-- 그리고 아래와 같이 `m.getTeam()`으로 Team객체를 얻어 print해보면 프록시 객체가 조회 되는 것을 확인할 수 있다.
+- 그리고 아래와 같이 Team객체를 얻어 print해보면 프록시 객체가 조회 되는 것을 확인할 수 있다.
+
 ```java
 Member m = entityManager.find(Member.class, member.getId());
 System.out.println(m.getTeam().getClass());
