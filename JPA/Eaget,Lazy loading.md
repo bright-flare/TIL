@@ -41,6 +41,44 @@ entityManager.persist(member);
 Member m = entityManager.find(Member.class, member.getId());
 ```
 
+- 실행 query
+```sql
+    select
+        member0_.member_id as member_i1_9_0_,
+        -- ..생략
+        team1_.team_id as team_id1_14_1_,
+        team1_.createdBy as createdb2_14_1_,
+        team1_.createdDate as createdd3_14_1_,
+        team1_.lastModifiedBy as lastmodi4_14_1_,
+        team1_.lastModifiedDate as lastmodi5_14_1_,
+        team1_.name as name6_14_1_ 
+    from
+        Member member0_ 
+    left outer join
+        Team team1_ 
+            on member0_.team_id=team1_.team_id 
+    where
+        member0_.member_id=?
+```
+
 1. 위와같은 코드가 있다고 해보자. Member Entity와 Team Entity는 `@ManyToOne`으로 연관관계가 설정되어 있다.
 2. `@ManyToOne`은 Fetch Type이 기본적으로 Eager이다.
-3. Fetch Type이 Eager이기 때문에 
+3. Fetch Type이 Eager이기 때문에 `m.getTeam()` 이러한 Team Entity관련 메소드를 호출하지 않더라도 Team을 join하여 결과값을 가져온다.
+
+### 지연 로딩
+
+> **Team Entity와의 연관관계 설정을 그대로 두고 `FetchType`을 `Lazy`로 설정하면**
+
+```sql
+    select
+        member0_.member_id as member_i1_9_0_,
+        member0_.createdBy as createdb2_9_0_,
+        member0_.createdDate as createdd3_9_0_,
+        member0_.lastModifiedBy as lastmodi4_9_0_,
+        member0_.lastModifiedDate as lastmodi5_9_0_,
+        -- ...생략
+    from
+        Member member0_ 
+    where
+        member0_.member_id=?
+```
