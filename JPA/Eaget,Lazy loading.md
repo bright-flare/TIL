@@ -82,3 +82,14 @@ Member m = entityManager.find(Member.class, member.getId());
     where
         member0_.member_id=?
 ```
+
+- 즉시 로딩과는 달리 Team을 join한 query가 발생하지 않는다. 
+- 그리고 아래와 같이 `m.getTeam()`으로 Team객체를 얻어 print해보면 프록시 객체가 조회 되는 것을 확인할 수 있다.
+```java
+Member m = entityManager.find(Member.class, member.getId());
+System.out.println(m.getTeam().getClass());
+
+// print result
+// class me.sseob.jpa.practice.basic.Team$HibernateProxy$l5MmBI0U
+```
+- 즉, 지연 로딩은 Team객체를 프록시 객체로 제공하며 Team객체를 실제 사용할 때에 뒤늦게(지연하여) DB에서 조회하여 Team 객체를 제공한다.
