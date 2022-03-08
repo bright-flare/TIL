@@ -39,6 +39,9 @@ member.setCreatedDate(LocalDateTime.now());
 member.setTeam(team);
 entityManager.persist(member);
 
+entityManager.flush();
+entityManager.clear();
+
 // Fetch전략이 즉시로딩일 경우 join하여 즉시 로딩한다.
 Member m = entityManager.find(Member.class, member.getId());
 ```
@@ -172,6 +175,9 @@ member.setCreatedBy("심현섭");
 member.setCreatedDate(LocalDateTime.now());
 member.setTeam(team);
 entityManager.persist(member);
+
+entityManager.flush();
+entityManager.clear();
 
 Member m = entityManager.find(Member.class, member.getId());
 ```
