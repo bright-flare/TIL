@@ -23,6 +23,8 @@ public class Member{
 	@ManyToOne(fetch = FetchType.EAGER) // 즉시 로딩
 	@JoinColumn(name = "team_id")
 	private Team team;
+
+    // ...생략
 }
 ```
 
@@ -155,6 +157,8 @@ public class Member{
 	@ManyToOne(fetch = FetchType.LAZY) // 지연 로딩
 	@JoinColumn(name = "team_id")
 	private Team team;
+
+    // ...생략
 }
 ```
 
@@ -169,10 +173,10 @@ member.setCreatedDate(LocalDateTime.now());
 member.setTeam(team);
 entityManager.persist(member);
 
-// Fetch전략이 즉시로딩일 경우 join하여 즉시 로딩한다.
 Member m = entityManager.find(Member.class, member.getId());
 ```
 
+- query 확인
 ```sql
     select
         member0_.member_id as member_i1_9_0_,
