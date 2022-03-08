@@ -217,7 +217,9 @@ System.out.println("m.getTeam().getName() = " + m.getTeam().getName());
 
 ### 결과
 ```sql
---m.getTeam().getClass() =  me.sseob.jpa.practice.basic.Team$HibernateProxy$eXEaa5QH
+
+m.getTeam().getClass() = me.sseob.jpa.practice.basic.Team$HibernateProxy$eXEaa5QH
+
 Hibernate: 
     select
         team0_.team_id as team_id1_14_0_,
@@ -231,7 +233,7 @@ Hibernate:
     where
         team0_.team_id=?
 
---m.getTeam().getName() = team !
+m.getTeam().getName() = team !
 ```
 - `hibernate proxy class`가 print된 후, `m.getTeam().getName()` 메소드가 실행되기 직전, select query가 실행된것을 확인할 수 있다. (말 그대로 `지연` 로딩)
 - 즉, 지연 로딩일 때에 Team객체를 `Proxy` 객체로 제공하며 Team객체를 실제 사용할 때에 DB에서 조회하여 Team 객체를 제공한다. 그리고 `Proxy` 객체가 실제로 사용될 때, `Proxy` 객체는 `target(실제 객체의 참조)`을 통해 실제 Entity의 method를 호출하게 되는데 영속성 컨텍스트에 해당 Entity가 비어있게 되면 영속성 컨텍스트에 초기화 요청을 하게된다.
@@ -279,5 +281,9 @@ m.getTeam().getName() = team !
 
 > **`clear()`는 영속성 컨텍스트에 있는 데이터를 clear시킨다.**
 
-- FetchType이 지연 로딩인데도 왜 Proxy 객체가 아닌 실제 Team객체가 print 되었을까 ? 
-- 
+- FetchType이 지연 로딩인데도 왜 `Proxy` 객체가 아닌 실제 Team객체가 print 되었을까 ? 
+
+1. `Proxy`객체는 영속성 컨텍스트에 해당 객체가 비어있을 때 얻게된다. 이미 영속성 컨텍스트에 얻고자하는 객체가 있다면 프록시 객체를 제공할 필요가 없기 때문이다.
+    - 이전에는 `clear()`를 통해 영속성 컨텍스트를 비웠기 때문에 `Proxy`객체를 반환하였던 것이다.
+
+2. 또한, 영속성 컨텍스트는 `영속화된 Entity의 동일성을 보장 (identity)`하기 때문에 Member와 Team을 `EntityManager.persist()`를 통해 먼저 영속화를 했으므로, `Proxy`객체가 아닌 실제 객체를 제공하는 것이다.
