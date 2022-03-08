@@ -180,6 +180,7 @@ entityManager.flush();
 entityManager.clear();
 
 Member m = entityManager.find(Member.class, member.getId());
+System.out.println("m.getTeam().getClass() = " + m.getTeam().getClass());
 ```
 
 - query 확인
@@ -195,18 +196,12 @@ Member m = entityManager.find(Member.class, member.getId());
         Member member0_ 
     where
         member0_.member_id=?
+
+    m.getTeam().getClass() = me.sseob.jpa.practice.basic.Team$HibernateProxy$l5MmBI0U
 ```
 
 - 즉시 로딩과는 달리 Team을 join한 query가 발생하지 않는다. 
 - 그리고 아래와 같이 Team객체를 얻어 print해보면 `Proxy` 객체가 조회 되는 것을 확인할 수 있다.
-
-```java
-Member m = entityManager.find(Member.class, member.getId());
-System.out.println(m.getTeam().getClass());
-
-// print result
-// class me.sseob.jpa.practice.basic.Team$HibernateProxy$l5MmBI0U
-```
 
 ### 지연 로딩 확인하기
 
@@ -216,13 +211,13 @@ System.out.println(m.getTeam().getClass());
 
 ```java
 Member m = entityManager.find(Member.class, member.getId());
-System.out.println(m.getTeam().getClass());
+System.out.println("m.getTeam().getClass() = " + m.getTeam().getClass());
 System.out.println("m.getTeam().getName() = " + m.getTeam().getName());
 ```
 
 ### 결과
 ```sql
---class me.sseob.jpa.practice.basic.Team$HibernateProxy$eXEaa5QH
+--m.getTeam().getClass() =  me.sseob.jpa.practice.basic.Team$HibernateProxy$eXEaa5QH
 Hibernate: 
     select
         team0_.team_id as team_id1_14_0_,
@@ -241,5 +236,48 @@ Hibernate:
 - `hibernate proxy class`가 print된 후, `m.getTeam().getName()` 메소드가 실행되기 직전, select query가 실행된것을 확인할 수 있다. (말 그대로 `지연` 로딩)
 - 즉, 지연 로딩일 때에 Team객체를 `Proxy` 객체로 제공하며 Team객체를 실제 사용할 때에 DB에서 조회하여 Team 객체를 제공한다. 그리고 `Proxy` 객체가 실제로 사용될 때, `Proxy` 객체는 `target(실제 객체의 참조)`을 통해 실제 Entity의 method를 호출하게 되는데 영속성 컨텍스트에 해당 Entity가 비어있게 되면 영속성 컨텍스트에 초기화 요청을 하게된다.
 
-### 무조건 Proxy 객체 ?
+### 지연 로딩일땐 무조건 Proxy 객체 ?
 
+> **연관관계 `FetchType`이 `Lazy`로 설정 되어있다고 무조건 `Proxy`객체로 해당 객체를 제공받는것은 아니다.**
+
+### 실행해보기
+
+> **이번엔 아래 두 메소드를 실행하지 않고 결과를 확인해 보자.**
+> **`entityManager.flush();`**
+> **`entityManager.clear();`**
+
+```java
+Team team = new Team("team !");
+entityManager.persist(team);
+
+Member member = new Member("sseob");
+member.setCreatedBy("심현섭");
+member.setCreatedDate(LocalDateTime.now());
+member.setTeam(team);
+entityManager.persist(member);
+
+// entityManager.flush();
+// entityManager.clear();
+
+Member m = entityManager.find(Member.class, member.getId());
+
+System.out.println(m.getTeam().getClass());
+System.out.println("m.getTeam().getName() = " + m.getTeam().getName());
+```
+
+### 결과
+```
+class me.sseob.jpa.practice.basic.Team
+m.getTeam().getName() = team !
+```
+
+### 왜 Proxy 객체가 아닐까 ?
+
+> **`EntityManager.flush()`, `clear() 간단 설명`**
+
+> **`flush()`는 영속성 컨텍스트에 있는 데이터를 DB로 저장시킨다.**
+
+> **`clear()`는 영속성 컨텍스트에 있는 데이터를 clear시킨다.**
+
+- FetchType이 지연 로딩인데도 왜 Proxy 객체가 아닌 실제 Team객체가 print 되었을까 ? 
+- 
