@@ -1,0 +1,38 @@
+{
+	"nodes":[
+		{"id":"d6dcd33ad53d86b8","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/Kafka의 기원.md","x":-1547,"y":-700,"width":274,"height":50,"color":"2"},
+		{"id":"b0cc6ac2059baf54","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/Message.md","x":-1220,"y":-198,"width":187,"height":50},
+		{"id":"e50adf61c1e2e11b","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/Batch.md","x":-1171,"y":-76,"width":170,"height":50},
+		{"id":"e533bf0cebb3eb12","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/Schema.md","x":-1540,"y":82,"width":176,"height":50},
+		{"id":"2f33399e53565a80","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/토픽과 파티션.md","x":-1540,"y":202,"width":226,"height":50},
+		{"id":"fce0bd6b5199901e","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/Stream.md","x":-1364,"y":282,"width":170,"height":50},
+		{"id":"3fbcbb844e58f023","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/images/batch와 message.png","x":-1547,"y":-250,"width":287,"height":293},
+		{"id":"ba7c1f3ca80ccbd4","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/Producer, Consumer.md","x":-1540,"y":402,"width":346,"height":50},
+		{"id":"10e8760095d8fb3a","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/Kafka 소개.md","x":-1547,"y":-358,"width":327,"height":57},
+		{"id":"160e73b1fc12444b","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/Broker, Cluster.md","x":-1540,"y":500,"width":279,"height":53},
+		{"id":"44618fbe238aa165","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/MirrorMaker.md","x":-1248,"y":580,"width":247,"height":50},
+		{"id":"00af8fb72da899d4","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/Application 설계 초기의 발행-구독 시스템 및 문제.md","x":-1547,"y":-580,"width":640,"height":50},
+		{"id":"63164698e7c651d5","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/또 다른 문제.md","x":-593,"y":-440,"width":219,"height":51},
+		{"id":"550400e05ce398de","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/메세지 발행-구독 시스템으로 개선.md","x":-1086,"y":-490,"width":440,"height":50},
+		{"id":"88db699e7e33bdbe","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/Kafka를 사용하는 이유.md","x":-1536,"y":820,"width":369,"height":60,"color":"3"},
+		{"id":"923bec4e2b90adf9","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/다중 프로듀서.md","x":-1120,"y":920,"width":244,"height":50},
+		{"id":"c2bf8e9d6e1e6210","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/다중 컨슈머.md","x":-1120,"y":1016,"width":248,"height":50},
+		{"id":"ef564ce65a5ad6d7","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/디스크 기반 보존.md","x":-1120,"y":1100,"width":280,"height":50},
+		{"id":"b29618c106500b01","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/확장성.md","x":-1120,"y":1180,"width":199,"height":50},
+		{"id":"0bf5388a1d3e1d9e","type":"text","text":"## 고성능\n## 플랫폼 기능\n## 데이터 생태계\n","x":-1122,"y":1260,"width":250,"height":169},
+		{"id":"e69a8ef31bcd222f","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/Zookeeper.md","x":-1540,"y":700,"width":303,"height":50},
+		{"id":"06e7f461d5e92716","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-1-2/Kafka 설치 및 실행하기 for macos.md","x":-1536,"y":1540,"width":476,"height":50}
+	],
+	"edges":[
+		{"id":"eec21e1f1cd86a81","fromNode":"b0cc6ac2059baf54","fromSide":"bottom","toNode":"e50adf61c1e2e11b","toSide":"top"},
+		{"id":"ac0ae8c91a713c8b","fromNode":"2f33399e53565a80","fromSide":"bottom","toNode":"fce0bd6b5199901e","toSide":"left"},
+		{"id":"27f094102612b30e","fromNode":"160e73b1fc12444b","fromSide":"bottom","toNode":"44618fbe238aa165","toSide":"left"},
+		{"id":"e45c4ed627dbbcda","fromNode":"00af8fb72da899d4","fromSide":"bottom","toNode":"550400e05ce398de","toSide":"left"},
+		{"id":"4d7994b1f1da5f3b","fromNode":"550400e05ce398de","fromSide":"bottom","toNode":"63164698e7c651d5","toSide":"left"},
+		{"id":"9cbf7cf0d697eefd","fromNode":"88db699e7e33bdbe","fromSide":"bottom","toNode":"923bec4e2b90adf9","toSide":"left"},
+		{"id":"7d29a8401671f2a6","fromNode":"88db699e7e33bdbe","fromSide":"bottom","toNode":"c2bf8e9d6e1e6210","toSide":"left"},
+		{"id":"ed583856088c6d0b","fromNode":"88db699e7e33bdbe","fromSide":"bottom","toNode":"ef564ce65a5ad6d7","toSide":"left"},
+		{"id":"924b414256831af9","fromNode":"88db699e7e33bdbe","fromSide":"bottom","toNode":"b29618c106500b01","toSide":"left"},
+		{"id":"0a9e669c5c29a854","fromNode":"88db699e7e33bdbe","fromSide":"bottom","toNode":"0bf5388a1d3e1d9e","toSide":"left"}
+	]
+}

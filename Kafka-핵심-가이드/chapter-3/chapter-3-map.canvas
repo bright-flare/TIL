@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"33bd3db108f1431b","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-3/Producer의 데이터 전송 흐름.md","x":-1160,"y":-640,"width":420,"height":50},
+		{"id":"25ecfb48f032b84a","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-3/카프카 프로듀서 생성.md","x":-1160,"y":-500,"width":300,"height":60},
+		{"id":"989f7b9988fe3ff2","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-3/KafkaProducer 에러 종류.md","x":-820,"y":-500,"width":380,"height":60},
+		{"id":"f0db8dc3d91424db","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-3/Producer의 메세지 전송 방법 3가지.md","x":-1160,"y":-380,"width":500,"height":60},
+		{"id":"5dc6bb1d14022966","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-3/Custom Serializer.md","x":-1160,"y":-240,"width":328,"height":50},
+		{"id":"ffac2fe4467355ed","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-3/Custom Serializer 문제.md","x":-820,"y":-140,"width":400,"height":50},
+		{"id":"729d21480fc5a2d4","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-3/Schema Registry.md","x":-820,"y":-20,"width":400,"height":60},
+		{"id":"d0af1a8d029ac06e","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-3/Partition.md","x":-1177,"y":113,"width":377,"height":50},
+		{"id":"4dc5cb8398d21709","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-3/Header.md","x":-1182,"y":220,"width":387,"height":59},
+		{"id":"66785800b47ef71c","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-3/ProducerInterceptor.md","x":-1177,"y":340,"width":400,"height":50},
+		{"id":"bf6ef74c4b9f88c9","x":-1177,"y":440,"width":504,"height":61,"type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-3/Kafka broker의 쿼터, 스로틀링.md"}
+	],
+	"edges":[
+		{"id":"aa19f023dd18079d","fromNode":"5dc6bb1d14022966","fromSide":"bottom","toNode":"ffac2fe4467355ed","toSide":"left"},
+		{"id":"2d8ca3a5ec44010c","fromNode":"ffac2fe4467355ed","fromSide":"bottom","toNode":"729d21480fc5a2d4","toSide":"top"}
+	]
+}
