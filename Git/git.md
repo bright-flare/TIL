@@ -5,7 +5,7 @@
 - commit한 시점의 파일들의 상태를 저장해놓는다고 생각하면 된다. (branch를 옮겼을 때에도 마찬가지)
 
 ## Git, GitHub ❓
-- 정말 간단하게 github은 저장소이고, git은 local version 관리 프로그램이다 !
+- 정말 간단하게 github은 원격 저장소이고, git은 local version 관리 프로그램이다 !
 - **git**에서 마음껏 version 관리를 해놓은 **commit들**을 push해서 **github**에 저장한다. 
 
 ## Stage ❓
@@ -18,7 +18,7 @@
 
 <br>
 
-### 🛠 git 설정, 초기화
+### 🛠 git 설정 & 초기화
 
 ```
 # git version 확인 !
@@ -134,7 +134,7 @@ $ git pull origin main
 # 현재 커밋 상태부터 branch가 생성되며 생성 이후로는 하나의 큰 줄기에서 뻗어나가는 가지처럼 갈라진다.
 # 갈라진 가지들, branch들은 각자의 삶을 살다가 pull request를 통해 merge하면 다시 합칠 수 있음 !
 
-$ git branch branchname
+$ git branch <branchname>
 ```
 
 ``` 
@@ -155,3 +155,8 @@ $ git checkout branch002
 $ git branch -d branch002
 ```
 
+```
+# 원격(remote) branch checkout하기
+
+$ git checkout -t origin/feature/test-branch
+```
