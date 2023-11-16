@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"id":"640300e4927253fe","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-4/Consumer.md","x":-590,"y":-235,"width":221,"height":55},
+		{"id":"6379ea2d6f0762cb","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-4/Partition Rebalance.md","x":-588,"y":-140,"width":369,"height":52},
+		{"id":"428108f0a87d2cd5","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-4/Group Coordinator ?.md","x":-320,"y":-40,"width":361,"height":50},
+		{"id":"27ddadd015ba5871","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-4/Heartbeat ?.md","x":-320,"y":40,"width":321,"height":57},
+		{"id":"a4b3ec609f84a41a","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-4/Consumer 생성하기.md","x":-573,"y":260,"width":352,"height":50},
+		{"id":"9e6aaba340b9d5b7","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-4/정적 그룹 멤버쉽.md","x":-573,"y":160,"width":308,"height":50},
+		{"id":"ff25200360cb64a9","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-4/poll().md","x":-573,"y":360,"width":181,"height":50},
+		{"id":"e266da09759078e7","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-4/Offset Commit.md","x":-573,"y":460,"width":279,"height":56},
+		{"id":"8560029fcf5f572a","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-4/Rebalance Listener.md","x":-573,"y":660,"width":331,"height":51},
+		{"id":"5470a45955a4a74d","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-4/OffsetCommit  방법.md","x":-369,"y":560,"width":310,"height":50},
+		{"id":"fbc55b1b5f7f859f","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-4/polling loop 벗어나기.md","x":-573,"y":780,"width":345,"height":50},
+		{"id":"007ce6825fec08ef","type":"file","file":"2. 개인/3. study/TIL/Kafka-핵심-가이드/chapter-4/poll() 말고 다른 방법으로 읽기.md","x":-573,"y":900,"width":421,"height":50}
+	],
+	"edges":[
+		{"id":"d1cdd4d38351f777","fromNode":"6379ea2d6f0762cb","fromSide":"bottom","toNode":"428108f0a87d2cd5","toSide":"left"},
+		{"id":"840a0bbf82cc73a3","fromNode":"6379ea2d6f0762cb","fromSide":"bottom","toNode":"27ddadd015ba5871","toSide":"left"},
+		{"id":"fe3c798e007e0a26","fromNode":"e266da09759078e7","fromSide":"bottom","toNode":"5470a45955a4a74d","toSide":"left"}
+	]
+}
