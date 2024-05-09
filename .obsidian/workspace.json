@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "springbatch_quartz.md",
+                "file": "AWS/CLI.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "springbatch_quartz.md",
+                "file": "AWS/CLI.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "springbatch_quartz.md",
+                "file": "AWS/CLI.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "springbatch_quartz.md"
+                "file": "AWS/CLI.md"
               }
             }
           }
@@ -148,10 +148,13 @@
   },
   "active": "003eb93cd1c6b72d",
   "lastOpenFiles": [
+    "Git/git.md",
+    "AWS/CLI.md",
+    "springbatch_quartz.md",
+    "AWS",
     "Images/batch뜻.png",
     "Images/\bbatch뜻.png",
     "Images/springfactories.png",
-    "springbatch_quartz.md",
     "Kafka/temp.md",
     "Kafka"
   ]

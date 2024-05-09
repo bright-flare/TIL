@@ -160,3 +160,12 @@ $ git branch -d branch002
 
 $ git checkout -t origin/feature/test-branch
 ```
+
+### tag 🏷️
+
+```
+# remote에 없는 local tag삭제
+
+$ git tag -l | xargs git tag -d && git fetch -t
+```
+
