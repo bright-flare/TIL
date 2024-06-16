@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AWS/CLI.md",
+                "file": "AWS/AWS Lambda.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AWS/CLI.md",
+                "file": "AWS/AWS Lambda.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "AWS/CLI.md",
+                "file": "AWS/AWS Lambda.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AWS/CLI.md"
+                "file": "AWS/AWS Lambda.md"
               }
             }
           }
@@ -148,8 +148,9 @@
   },
   "active": "003eb93cd1c6b72d",
   "lastOpenFiles": [
-    "Git/git.md",
     "AWS/CLI.md",
+    "AWS/AWS Lambda.md",
+    "Git/git.md",
     "springbatch_quartz.md",
     "AWS",
     "Images/batch뜻.png",
