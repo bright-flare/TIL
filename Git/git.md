@@ -57,6 +57,24 @@ $ git config --global user.email "git@gmail.com"
 $ git config --global init.defaultBranch main
 ```
 
+```
+# 자주 사용하는 명령어 alias 설정
+
+$ git config --global alias.c checkout
+```
+
+```
+# alias 설정 해제
+
+$ git config --global --unset alias.c
+```
+
+```
+# alias 조회
+
+$ git config --global --get-regexp alias
+```
+
 ### ☁️ 원격 저장소와 연결하기
 ```
 # 🚀 local git과 원격 저장소(GitHub)의 repository와 연결한다. 
