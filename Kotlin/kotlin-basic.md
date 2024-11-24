@@ -1,5 +1,7 @@
 # 아토믹 코틀린 학습중에 기록하고 싶은 것들.
 
+# 0 ~ 6
+
 - 세미콜론 생략해서 사용하는게 10분만에 적응될 정도로 편함
 - Any Type은 java의 Object와 같은 역할을 한다. equals, hashcode 구현되어있음.
     - 같은 역할이지 Object는 아닌듯.
@@ -45,3 +47,21 @@ fun multiplyByThree(number: Int): Int = number * 3
 fun multiplyByFour(number: Int) = number * 3 // 식 본문만 반환 타입 추론 가능
 ```
 - 함수 본문이 중괄호로 둘러싸인 경우 block body 블록 본문이라고 한다.
+
+
+# 7 ~ 12
+
+- if문이 식으로 활용 가능. if 자체를 return할 수 있다. 와우 !
+- 심지어 function body 자체를 생략할수도 있다.
+```kotlin
+fun oneOrTheOther(exp: Boolean): String =
+  if (exp) {
+    "True!"
+  } else {
+    "False!"
+  }
+```
+- for loop 에서의 in, range expression 활용 너무 편하다 
+- kotlin에서는 IntRange 라는 정수 `0..10` 과 같은 정수 범위 타입이 존재함 .. !
+- range 말고도 Progression 이라는 타입이 있다. `0..10 step 2` 표현식과 같이 0부터 10인데 2tep씩 증가와 같은 Progression의 타입이다.
+
