@@ -109,7 +109,7 @@ class Person(
 ```
 
 - Custom getter를 만들 수 있다.
-```
+```kotlin
 class Person(
   val name: String = "default_현섭",
   var age: Int = 110
