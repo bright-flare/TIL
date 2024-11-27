@@ -17,6 +17,8 @@
 - kt 파일에 function을 마구마구 생성할 수 있음.
 - val, var java final 키워드를 생략할 수 있어서 편하네.
 - string template은 편하다 
+- When expressions. java의 switch와 비슷하다.
+- java의 instanceof -> is로 간편비교 가능 !
 
 ```kotlin
 val name = "test"
@@ -122,3 +124,36 @@ fun main(){
   person.isAdult // getter처럼 호출 가능
 }
 ```
+
+- kotlin singleton Class를 만드는 방법이 매우 간단한다.
+- 문법이 매우 간결하다.
+```
+object Singleton {
+  var test: String = "test"
+}
+```
+
+- inner class를 작성할 때 기본으로 static inner class로 만들어진다.
+  - java에서 inner class는 static으로 만드는 것을 권장한다. 의도치않은 메모리 누수, 바깥 클래스에 대한 참조 문제 등
+  - 때문에 항상 static 키워드를 붙여주어야 하는데 kotlin에서는 기본적으로 내부 클래스를 생성할 때 inner 키워드를 붙여주지 않는 한 static class로 생성된다.
+
+- Data class
+  - equals, hashcode, toString을 모두 자동으로 만들어준다.
+  - 생성자에 named argument 를 사용하면 builder패턴도 필요없다 !
+  - 조쉬롱 형님이 lombok 말고 data class 활용하라고 말씀하심
+
+- enum
+  - when + enum 조합으로 간편하게 enum분기처리에 대한 작업을 편하게 할 수 있다.
+  - java의 경우 최근에 when과 비슷한 switch case문에서 enum을 사용가능하다.
+
+- collection
+  - Collection을 생성할 때 불변, 가변 Collection을 처음부터 지정하여 생성할 수 있다.
+
+- List
+  - listOf(1, 2, 3), mutableListOf(1, 2, 3)
+- Set
+  - setOf(100, 200, 300), mutableSetOf(100, 200, 300)
+- Map
+  - mapOf(1 to "test", 2 to "test2"), mutableMapOf(1 to "test", 2 to "test2")
+
+- 확장함수
