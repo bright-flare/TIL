@@ -19,6 +19,7 @@
 - string template은 편하다 
 - When expressions. java의 switch와 비슷하다.
 - java의 instanceof -> is로 간편비교 가능 !
+- try-catch with resources 대신 use로 resource를 사용 가능하다.
 
 ```kotlin
 val name = "test"
@@ -157,3 +158,14 @@ object Singleton {
   - mapOf(1 to "test", 2 to "test2"), mutableMapOf(1 to "test", 2 to "test2")
 
 - 확장함수
+
+- lambda
+  - kotlin에서는 function이 일급시민이다. 
+  - function을 parameter로 넘길 수 있고, 변수에 넣을 수 있다. 와우 ......
+  - function이 마지막 paranmeter에 위치하는 경우 () 밖에 labda를 작성하여 넘겨줄 수 있다.
+  - java에서 람다식 밖에 영역에 있는 변수를 사용할 경우 final이어야만 한다. 하지만 kotlin에서는 사용가능하다 !!
+    - 이부분은 final 변수가 아닌경우 캡처링 관련 복잡한 문제가 있어서 language level에서 제한하고 있다.
+    - kotlin에서는 Closure덕분에 해당 final이 아닌 변수도 lambda 식에서 문제 없이 사용 가능하다
+
+- kotlin collections package에는 수많은 매우 편리한 확장함수들이 많다 !!
+  - filter, map, reduce 등등 와우..
