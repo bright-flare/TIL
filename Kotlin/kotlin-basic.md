@@ -168,4 +168,12 @@ object Singleton {
     - kotlin에서는 Closure덕분에 해당 final이 아닌 변수도 lambda 식에서 문제 없이 사용 가능하다
 
 - kotlin collections package에는 수많은 매우 편리한 확장함수들이 많다 !!
-  - filter, map, reduce 등등 와우..
+  - filter, map, mapNotNull, all, none, any, sortedBy, firtst, firstOrNull, last, lastOrNull 등등 와우..
+
+- takeIf, takeUnless
+  - if else return 문법을 축약하여 표현할 수 있다.
+
+- scope function
+  - 확장함수
+    - let, run, also, apply
+  - with
