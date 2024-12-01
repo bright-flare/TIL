@@ -17,7 +17,15 @@
 - kt 파일에 function을 마구마구 생성할 수 있음.
 - val, var java final 키워드를 생략할 수 있어서 편하네.
 - string template은 편하다 
-- When expressions. java의 switch와 비슷하다.
+
+- When expressions.
+  - java의 switch와 비슷하다.
+  - java의 경우 14 버전부터 정식으로 switch expression 기능을 사용할 수 있다.
+  - java의 switch case문에서 default 대신에 else를 사용함.
+  - when + enum 조합으로 간편하게 enum분기처리에 대한 작업을 편하게 할 수 있다.
+    - enum을 사용할 경우 else문을 사용하지 않고 상수 전체에 대한 분기처리를 할 수 있다.
+    - 컴파일타임에 추가,삭제된 enum 상수에 대한 분기처리 오류를 방지할 수 있다.
+
 - java의 instanceof -> is로 간편비교 가능 !
 - try-catch with resources 대신 use로 resource를 사용 가능하다.
 - safe call 오마이갓...... 미쳤음. null일 경우 호출하지 않는 기능.
@@ -143,10 +151,6 @@ object Singleton {
   - equals, hashcode, toString을 모두 자동으로 만들어준다.
   - 생성자에 named argument 를 사용하면 builder패턴도 필요없다 !
   - 조쉬롱 형님이 lombok 말고 data class 활용하라고 말씀하심
-
-- enum
-  - when + enum 조합으로 간편하게 enum분기처리에 대한 작업을 편하게 할 수 있다.
-  - java의 경우 최근에 when과 비슷한 switch case문에서 enum을 사용가능하다.
 
 - collection
   - Collection을 생성할 때 불변, 가변 Collection을 처음부터 지정하여 생성할 수 있다.
