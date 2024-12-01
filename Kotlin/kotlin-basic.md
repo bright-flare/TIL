@@ -20,6 +20,7 @@
 - When expressions. java의 switch와 비슷하다.
 - java의 instanceof -> is로 간편비교 가능 !
 - try-catch with resources 대신 use로 resource를 사용 가능하다.
+- safe call 오마이갓...... 미쳤음. null일 경우 호출하지 않는 기능.
 
 ```kotlin
 val name = "test"
@@ -174,6 +175,12 @@ object Singleton {
   - if else return 문법을 축약하여 표현할 수 있다.
 
 - scope function
-  - 확장함수
-    - let, run, also, apply
-  - with
+  - 람다를 사용해서 임시 범위를 만들어 사용할 수 있다.
+
+|function|Object reference|반환값|확장함수 여부|
+|:---:|:---:|:---:|:---:|
+|let|it|Lambda result|O|
+|run|this|Lambda result|O|
+|apply|this|Context object|O|
+|also|it|Context Object|O|
+|with|this|Lambda result|X|
