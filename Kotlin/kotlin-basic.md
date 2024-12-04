@@ -1,5 +1,7 @@
 # 아토믹 코틀린 학습중에 기록하고 싶은 것들.
 
+- 프로그램 진입점은 fun main() 이다.
+  - java의 public static void main(String[] args)와 같다.
 - 세미콜론 생략해서 사용하는게 10분만에 적응될 정도로 편함
 - Any Type은 java의 Object와 같은 역할을 한다. equals, hashcode 구현되어있음.
     - 같은 역할이지 Object는 아닌듯.
@@ -7,14 +9,17 @@
 
 - Unit 타입은 java의 void와 같다.
     - The type with only one value: the Unit object. This type corresponds to the void type in Java.
-
+- primitive type과 reference type을 구분하지 않는다.
 - void 생략 가능
 
 - 타입을 콜론 이후에 선언해준다.
 
 - kt 파일에 function을 마구마구 생성할 수 있음.
 - val, var java final 키워드를 생략할 수 있어서 편하네.
-- string template은 편하다 
+- 배열이 아닌 List객체도 [] 를 사용해 인덱스에 접근 가능하다.
+- in keyword로 값이 어떤 범위에 포함되는지 검사 가능하다
+  - 10 in 1..10 // true
+  - 0 <= num && num <= 10 // java애서는 이렇게 체크해야 한다.
 
 - When expressions.
   - java의 switch와 비슷하다.
@@ -27,14 +32,17 @@
 - java의 instanceof -> is로 간편비교 가능 !
 - try-catch with resources 대신 use로 resource를 사용 가능하다.
 - safe call 오마이갓...... 미쳤음. null일 경우 호출하지 않는 기능.
+- `==` 연산자로 참조타입 비교시 내부적으로 equals를 호출한다.
+  - 참조타입의 주소값 비교를 하고싶으면 `===` 연산자를 사용하면 된다.
 
+- string template은 편하다
 ```kotlin
 val name = "test"
 println("캬 ~ ${name}")
 ```
 
 - raw string은 편하다 
-
+- " 같은 문자열을 escape하지 않아도 된다 
 ```kotlin
 
   // raw string !
@@ -54,12 +62,13 @@ println("캬 ~ ${name}")
 ```kotlin
 fun multiplyByThree(number: Int): Int = number * 3
 
-fun multiplyByFour(number: Int) = number * 3 // 식 본문만 반환 타입 추론 가능
+fun multiplyByFour(number: Int) = number * 4 // 식 본문만 반환 타입 추론 가능
 ```
 - 함수 본문이 중괄호로 둘러싸인 경우 block body 블록 본문이라고 한다.
 
 
 - if문이 식으로 활용 가능. if 자체를 return할 수 있다. 와우 !
+- 주의 !! if를 식으로 활용할 때에는 반드시 else가 필요하다.
 - 심지어 function body 자체를 생략할수도 있다.
 ```kotlin
 fun oneOrTheOther(exp: Boolean): String =
@@ -83,7 +92,9 @@ fun oneOrTheOther(exp: Boolean): String =
 ## Kotlin의 Class
 
 - Class 선언시 public은 생략 가능하다.
-- field를 만들면 getter, setter를 자동 생성해준다.
+- field를 만들면 getter, setter를 compile 단계에서 자동으로 생성해준다.
+  - val feild는 getter만 생성
+  - var field는 getter, setter 모두 생성
 - 생성자 선언과 필드선언을 동시에 할 수 있다.
 
 - init 블럭을 활용하여 객체 생성시 초기화관련 코드를 넣을 수 있다.
