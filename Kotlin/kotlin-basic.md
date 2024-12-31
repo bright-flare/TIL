@@ -7,6 +7,9 @@
     - 같은 역할이지 Object는 아닌듯.
     - 최상위 객체인건 맞음.
 
+- 기본 접근 지시어가 public이다.
+- 상속을 구현할 때 단순하게 표현 가능하다.
+
 - Unit 타입은 java의 void와 같다.
     - The type with only one value: the Unit object. This type corresponds to the void type in Java.
 - primitive type과 reference type을 구분하지 않는다.
