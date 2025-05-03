@@ -36,7 +36,7 @@
 
 ## CRC 카드
 - 책임과 협력을 표현하기 위한 객체지향 설계 도구이다.
-- ![img.png](img/crc.png)
+- ![crc.png](/images/crc.png)
 
 ### GRASP
 
